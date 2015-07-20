@@ -62,6 +62,7 @@ group :test do
   gem 'shoulda', require: false
   gem 'timecop'
   gem 'simplecov', require: false
+  gem "codeclimate-test-reporter", require: false
 end
 
 group :development, :deploy do

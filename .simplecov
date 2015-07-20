@@ -56,6 +56,11 @@ end.new do
   else
     formatters = []
   end
+  if @running_ci
+    require 'codeclimate-test-reporter'
+    STDERR.puts '[COVERAGE] Running with CodeClimate TestReporter Formatter'
+    formatters << CodeClimate::TestReporter::Formatter
+  end
   SimpleCov.formatters = formatters
 end
 # rubocop:enable Style/MultilineBlockChain
