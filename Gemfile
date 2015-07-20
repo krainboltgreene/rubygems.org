@@ -61,6 +61,7 @@ group :test do
   gem 'bourne', require: false
   gem 'shoulda', require: false
   gem 'timecop'
+  gem 'simplecov', require: false
 end
 
 group :development, :deploy do
