@@ -3,6 +3,7 @@
 # vim: set ft=ruby
 @minimum_coverage = ENV.fetch('COVERAGE_MINIMUM') { 91.6 }.to_f.round(2)
 # rubocop:disable Style/DoubleNegation
+ENV['FULL_BUILD'] ||= ENV['CI']
 @running_ci       = !!(ENV['FULL_BUILD'] =~ /\Atrue\z/i)
 @generate_report  = @running_ci || !!(ENV['COVERAGE'] =~ /\Atrue\z/i)
 # rubocop:enable Style/DoubleNegation
